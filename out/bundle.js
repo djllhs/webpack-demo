@@ -85,7 +85,7 @@
 /******/ 	__webpack_require__.c = installedModules;
 
 /******/ 	// __webpack_public_path__
-/******/ 	__webpack_require__.p = "";
+/******/ 	__webpack_require__.p = "./out/";
 
 /******/ 	// Load entry module and return exports
 /******/ 	return __webpack_require__(0);
@@ -106,12 +106,11 @@
 	__webpack_require__(1);
 
 	__webpack_require__(5);
-	let People=__webpack_require__(8);
-	let p=new People("dada");
+	let People = __webpack_require__(8);
+	let p = new People("dada");
 	p.sayHi();
 	///*写法二*/
 	//require("./content.js")();
-
 
 /***/ },
 /* 1 */
@@ -162,15 +161,15 @@
 		Author Tobias Koppers @sokra
 	*/
 	// css base code, injected by the css-loader
-	module.exports = function() {
+	module.exports = function () {
 		var list = [];
 
 		// return the list of modules as css string
 		list.toString = function toString() {
 			var result = [];
-			for(var i = 0; i < this.length; i++) {
+			for (var i = 0; i < this.length; i++) {
 				var item = this[i];
-				if(item[2]) {
+				if (item[2]) {
 					result.push("@media " + item[2] + "{" + item[1] + "}");
 				} else {
 					result.push(item[1]);
@@ -180,25 +179,23 @@
 		};
 
 		// import a list of modules into the list
-		list.i = function(modules, mediaQuery) {
-			if(typeof modules === "string")
-				modules = [[null, modules, ""]];
+		list.i = function (modules, mediaQuery) {
+			if (typeof modules === "string") modules = [[null, modules, ""]];
 			var alreadyImportedModules = {};
-			for(var i = 0; i < this.length; i++) {
+			for (var i = 0; i < this.length; i++) {
 				var id = this[i][0];
-				if(typeof id === "number")
-					alreadyImportedModules[id] = true;
+				if (typeof id === "number") alreadyImportedModules[id] = true;
 			}
-			for(i = 0; i < modules.length; i++) {
+			for (i = 0; i < modules.length; i++) {
 				var item = modules[i];
 				// skip already imported module
 				// this implementation is not 100% perfect for weird media query combinations
 				//  when a module is imported multiple times with different media queries.
 				//  I hope this will never occur (Hey this way we have smaller bundles)
-				if(typeof item[0] !== "number" || !alreadyImportedModules[item[0]]) {
-					if(mediaQuery && !item[2]) {
+				if (typeof item[0] !== "number" || !alreadyImportedModules[item[0]]) {
+					if (mediaQuery && !item[2]) {
 						item[2] = mediaQuery;
-					} else if(mediaQuery) {
+					} else if (mediaQuery) {
 						item[2] = "(" + item[2] + ") and (" + mediaQuery + ")";
 					}
 					list.push(item);
@@ -207,7 +204,6 @@
 		};
 		return list;
 	};
-
 
 /***/ },
 /* 4 */
@@ -469,9 +465,9 @@
 	 * Created by 代佳玲 on 2016/7/6.
 	 */
 	//module.exports="It works from content.js"
-	__webpack_require__.e/* require */(1, function(__webpack_require__) { var __WEBPACK_AMD_REQUIRE_ARRAY__ = [__webpack_require__(6)]; (function(){
-	    console.log("hello webpack!")
-	}.apply(null, __WEBPACK_AMD_REQUIRE_ARRAY__));})
+	__webpack_require__.e/* require */(1, function(__webpack_require__) { var __WEBPACK_AMD_REQUIRE_ARRAY__ = [__webpack_require__(6)]; (function () {
+	  console.log("hello webpack!");
+	}.apply(null, __WEBPACK_AMD_REQUIRE_ARRAY__));});
 
 /***/ },
 /* 6 */,
@@ -482,12 +478,12 @@
 	/**
 	 * Created by 代佳玲 on 2016/7/13.
 	 */
-	class People{
-	    constructor(name){
-	        this.name=name;
+	class People {
+	    constructor(name) {
+	        this.name = name;
 	    }
-	    sayHi(){
-	        console.log(`hi ${this.name} !`);
+	    sayHi() {
+	        console.log(`hi ${ this.name } !`);
 	    }
 	}
 	module.exports = People;
